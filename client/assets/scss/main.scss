@@ -1,0 +1,14 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+$primary: orange;
+body {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    h1 {
+      font-family: 'Rochester', cursive;
+      // font-family: 'Vibur', cursive;
+    }
+    .container {
+      padding-top: 56px;
+    }
+  }
+  @import "ornament";

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-12">
-      <PageTitle page_title="Starters" />
+      <PageTitle page_title="Your Order" />
       <p>
         ...
       </p>
@@ -11,6 +11,7 @@
 
 <script>
 export default {
-  name: 'IndexPage'
+  layout: 'homepage',
+  name: 'your_order',
 }
 </script>
