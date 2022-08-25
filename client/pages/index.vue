@@ -2,15 +2,46 @@
   <div class="row">
     <div class="col-12">
       <PageTitle page_title="Starters" />
-      <p>
-        ...
-      </p>
+      <MenuCombos :menu_combos="menu" />
     </div>
   </div>
 </template>
 
 <script>
+import MenuCombos from '../components/MenuCombos.vue';
 export default {
-  name: 'IndexPage'
+    layout: 'homepage',
+    name: "IndexPage",
+    data() {
+        return {
+            menu: [],
+        };
+    },
+    created() {
+        this.getMenu();
+    },
+    methods: {
+        async getMenu() {
+            try {
+                // const result = await this.$strapi.find('menu-combos');
+                const qs = require("qs");
+                const query = qs.stringify({
+                    filters: {
+                        combotype: {
+                            $eq: "starter",
+                        },
+                    },
+                }, {
+                    encodeValuesOnly: true,
+                });
+                const results = await this.$axios.$get(`http://localhost:1337/api/menu-combos/?populate=*&${query}`);
+                this.menu = results;
+            }
+            catch (error) {
+                console.log("something went wrong: ", error);
+            }
+        }
+    },
+    components: { MenuCombos }
 }
 </script>

@@ -22,13 +22,13 @@ export default {}
 .top-menu {
   margin: 42px auto;
   .golden-lines {
-    border-bottom: 1px solid orange;
+    border-bottom: 1px solid $primary;
     &::after {
       display: block;
       content: '';
       height: 1px;
       width: 80%;
-      background-color:orange;
+      background-color: $primary;
       position: relative;
       top: 8px;
       margin: 0px auto;
@@ -56,7 +56,7 @@ export default {}
   }
   .dot {
     display: inline-block;
-    color: orange;
+    color: $primary;
     font-size: 8px;
   }
 }
